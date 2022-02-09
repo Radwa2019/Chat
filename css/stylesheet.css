@@ -1,0 +1,305 @@
+/* css Variables */
+:root {
+ --primary-color: #daebe1;
+ --secondary-color: #65af7a;
+ --text-color: rgb(112, 112, 112);
+}
+* {
+ box-sizing: border-box;
+ margin: 0;
+ padding: 0;
+ font-family: sans-serif;
+}
+.landing-page {
+ width: 100vw;
+ height: 100vh;
+ background-image:url(https://image.freepik.com/free-photo/tall-trees-forest-mountains-covered-with-fog_181624-11289.jpg);
+ background-size: cover;
+ position: relative;
+ margin: 0;
+}
+.landing-page::before {
+ content: "";
+ position: absolute;
+ width:100%;
+ height:100%;
+ background-color:#000;
+ opacity: 0.5;
+}
+.landing-page .container {
+ width: 80vw;
+ height: 80vh;
+ position: absolute;
+ top:50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+ display: flex;
+}
+/* Friends section */
+.landing-page .container .friends {
+ width: 35%;
+ height: 100%;
+ padding: 20px;
+ background-color: #b4d8b6;
+}
+.landing-page .container .friends hr {
+ background-color: #a5c7a7;
+ width: 95%;
+ height: 1px;
+ border: none;
+}
+/* Search */
+.landing-page .container .friends .search {
+ width: 100%;
+ height: 40px;
+ display: flex;
+ justify-content: flex-start;
+align-items: center;
+ margin-bottom: 20px;
+}
+ .landing-page .container .friends .search input {
+ width: 85%;
+ padding: 15px;
+ border: none;
+ outline: none;
+ background-color: var(--primary-color);
+ border-radius: 25px;
+ margin-right: 15px;
+}
+.friends .search a{
+ width: 40px;
+ height: 40px;
+ background-color: var(--secondary-color);
+ border: none; 
+ border-radius: 50%;
+ position: relative;
+ display: block;
+}
+.friends .search a::before {
+ content: "";
+ position: absolute;
+ width:10px;
+ height: 10px;
+ border: 1px solid #fff;
+ top: 50%;
+ left: 50%; 
+ transform: translate(-50%, -50%);
+}
+.friends .search a::after {
+ content: "";
+ position: absolute;
+ width: 1px;
+ height: 10px;
+ background-color: #fff;
+ border: 2px solid var(--secondary-color);
+ top: 50%;
+ left: 50%; 
+ transform: rotate(45deg) translate(-120%, -70%);
+border-radius: 30px;
+}
+/* box */
+.friends .box {
+ width: 100%;
+ height:60px;
+ padding-top: 10px;
+ padding-bottom: 10px;
+ display: grid;
+ grid-template-columns: 1fr 3fr 1fr;
+ grid-template-rows:20px 20px;
+ justify-content: left;
+ align-items: center;
+}
+.friends .box:hover {
+ background-color: var(--secondary-color);
+}
+.friends .box .image {
+ width: 40px;
+ height: 40px;
+ border-radius: 50%;
+ grid-row: 1 / 3;
+}
+.friends .box .image img {
+ width:100%;
+ height: 100%;
+ border-radius: 50%;
+}
+.friends .box h2, h3, p {
+  font-size: 14px;
+}
+.friends .box h2 {
+ color: rgb(56, 56, 56);
+}
+.friends .box h3 {
+ color: var(--text-color);
+}
+.friends .box p {
+ grid-column:  2 / 3;
+ color: var(--text-color);
+ margin-top:4px;
+}
+/* Chat section */
+.landing-page .container .chat {
+ background-image: url(https://image.freepik.com/free-vector/hand-painted-watercolor-nature-background_23-2148941599.jpg);
+ background-size: cover;
+ width: 65%;
+ height: 100%;
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+}
+.chat .header {
+ width: 100%;
+ background-color: var(--primary-color);
+ padding: 15px;
+ padding-left: 20px;
+ position: relative;
+}
+.chat .header a {
+ visibility: hidden;
+}
+.chat .second {
+ margin-top: 100px;
+}
+.chat .date {
+ width: 30%;
+ margin: 0 auto;
+ text-align: center;
+ position: relative;
+ color: var(--text-color)
+}
+.chat .date::before {
+ content: "";
+ position: absolute;
+ width: 100%;
+ height: 2px;
+ background-color: var(--primary-color);
+ top: 50%;
+ left: -100%;
+}
+.chat .date::after {
+ content: "";
+ position: absolute;
+ width: 100%;
+ height: 2px;
+ background-color: var(--primary-color);
+ top: 50%;
+ right: -100%;
+}
+.chat .sent {
+ width: fit-content;
+ margin-left: 30px;
+ background-color: var(--secondary-color);
+ margin-top: 10px;
+ padding: 10px;
+ border-radius: 10px;
+ position: relative;
+ color: #fff;
+}
+.chat .sent::before {
+ content: "";
+ position: absolute;
+ width: 0;
+ border: 5px solid var(--secondary-color);
+ border-right-color: transparent;
+ border-bottom-color: transparent;
+ transform: translateY(-5px) rotate(-45deg);
+ top: 50%;
+ left: -4px;
+}
+.chat .recieved {
+ width: fit-content;
+ margin-left: auto;
+ margin-right: 30px;
+ background-color: #b4d8b6;
+ margin-top: 10px;
+ padding: 10px;
+ border-radius: 10px;
+ position: relative;
+ color: rgb(22, 22, 22);
+}
+.chat .recieved::before {
+ content: "";
+ position: absolute;
+ width: 0;
+ border: 5px solid #b4d8b6;
+ border-right-color: transparent;
+ border-bottom-color: transparent;
+ transform: translateY(-5px) rotate(135deg);
+ right: -4px;
+ top: 50%;
+}
+.chat .type {
+ width: 90%;
+ height:50px;
+ margin: 20px auto;
+ border-radius: 5px;
+ background-color: var(--primary-color);
+ position: relative;
+}
+.chat .type input {
+ width:85%;
+ display: block;
+ margin: 0 auto;
+ padding: 10px;
+ border: none;
+ outline: none;
+ background-color: transparent;
+}
+.chat .type a {
+ display: block;
+}
+.chat .type i {
+ color: rgb(112, 112, 112);
+ margin-left: 15px;
+ margin-right: 15px;
+}
+.chat .type a:first-of-type {
+ position: absolute;
+ top: 50%; 
+ transform: rotate(-45deg) translateY(-10px);
+}
+.chat .type a:nth-of-type(2) {
+ position: absolute;
+ top: 50%;
+ right: 0; 
+ transform: translate(-20px, -10px);
+}
+.chat .type a:nth-of-type(3) {
+ position: absolute;
+ top: 50%;
+ right: 0; 
+ transform: translate(5px, -10px);
+}
+/* Mobile Screen */
+@media (max-width: 375px) {
+ .landing-page .container {
+  display: block;
+ }
+ .landing-page .container .friends {
+  width: 100%;
+  display: none;
+ }
+ .landing-page .container .chat {
+  width: 100%;
+ }
+ .landing-page .container .chat .header {
+  padding-left: 40px;
+ }
+ .landing-page .container .chat .header a {
+  visibility: visible;
+  display: block;
+  position: absolute;
+  top: 30%;
+  left: 15px;
+  color: #000;
+ }
+ .chat .date {
+  width: 50%;
+ }
+ .chat .date::before{
+  display: none;
+ }
+ .chat .date::after{
+  display: none;
+ }
+}
